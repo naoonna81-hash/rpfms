@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-kanit: "Kanit", ui-sans-serif, system-ui, sans-serif;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 213 68% 50%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 213 60% 95%;
+    --accent-foreground: 213 68% 30%;
+    --destructive: 0 73% 59%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 120 86% 30%;
+    --success-foreground: 210 40% 98%;
+    --warning: 41 96% 45%;
+    --warning-foreground: 26 40% 15%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 213 68% 50%;
+    --radius: 0.6rem;
+
+    --sidebar-background: 216 65% 15%;
+    --sidebar-foreground: 210 40% 92%;
+    --sidebar-border: 216 50% 22%;
+    --sidebar-accent: 213 68% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+
+    --chart-1: 213 68% 50%;
+    --chart-2: 17 82% 56%;
+    --chart-3: 159 73% 40%;
+    --chart-4: 41 100% 46%;
+    --chart-5: 337 70% 70%;
+    --chart-6: 249 48% 44%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 76% 7%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 213 77% 56%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 213 40% 20%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 72% 65%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 120 86% 40%;
+    --success-foreground: 210 40% 98%;
+    --warning: 40 100% 55%;
+    --warning-foreground: 26 40% 12%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 213 77% 56%;
+
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 92%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-accent: 213 77% 56%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+
+    --chart-1: 213 77% 56%;
+    --chart-2: 17 70% 50%;
+    --chart-3: 159 73% 36%;
+    --chart-4: 40 100% 39%;
+    --chart-5: 338 61% 58%;
+    --chart-6: 247 69% 72%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+}
+
+/* status badge colors kept out of the categorical chart palette per dataviz skill */
+:root {
+  --status-good: 120 86% 34%;
+  --status-warning: 41 96% 54%;
+  --status-serious: 17 79% 64%;
+  --status-critical: 0 61% 52%;
+}

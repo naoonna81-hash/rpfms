@@ -1,0 +1,333 @@
+// RPFMS — Research Project Financial Management System
+// Prisma schema — PostgreSQL
+// This file is the single source of truth for the ER diagram / API contract.
+// Do not change model/field names without updating docs/API_DESIGN.md and docs/ER_DIAGRAM.md.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// ENUMS
+// ---------------------------------------------------------------------------
+
+enum SystemRole {
+  SUPER_ADMIN // ผู้ดูแลหลัก — full access ทุกโครงการ + ตั้งค่าระบบ
+  ADMIN       // แอดมิน — จัดการโครงการ/ผู้ใช้ทั่วไป
+  USER        // ผู้ใช้ทั่วไป — สิทธิ์ตาม ProjectMember ต่อโครงการ
+}
+
+enum ProjectRole {
+  OWNER  // หัวหน้าโครงการ — แก้ไข/อนุมัติ/แชร์สิทธิ์ได้
+  EDITOR // เจ้าหน้าที่การเงิน — เพิ่ม/แก้ไขรายการได้ อนุมัติไม่ได้
+  VIEWER // ดูอย่างเดียว
+}
+
+enum ProjectStatus {
+  ACTIVE
+  SUSPENDED
+  CLOSED
+}
+
+enum PaymentMethod {
+  CASH
+  BANK_TRANSFER
+  CHEQUE
+  CREDIT_CARD
+  OTHER
+}
+
+enum ExpenseStatus {
+  DRAFT
+  PENDING_STAFF
+  PENDING_LEAD
+  APPROVED
+  REJECTED
+  PAID
+}
+
+enum ApprovalStep {
+  STAFF_REVIEW
+  PROJECT_LEAD_APPROVAL
+  CLOSED
+}
+
+enum ApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum NotificationType {
+  BUDGET_LOW
+  BUDGET_OVER
+  PENDING_APPROVAL
+  PROJECT_ENDING
+  EXPENSE_REJECTED
+  EXPENSE_PAID
+}
+
+enum AuditAction {
+  CREATE
+  UPDATE
+  DELETE
+  APPROVE
+  REJECT
+  LOGIN
+  EXPORT
+}
+
+// ---------------------------------------------------------------------------
+// CORE
+// ---------------------------------------------------------------------------
+
+model User {
+  id           String     @id @default(uuid())
+  name         String
+  email        String     @unique
+  passwordHash String
+  role         SystemRole @default(USER)
+  avatarUrl    String?
+  isActive     Boolean    @default(true)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  memberships    ProjectMember[]
+  projectsOwned  Project[]        @relation("ProjectCreatedBy")
+  expensesSubmitted Expense[]     @relation("ExpenseSubmittedBy")
+  approvals      Approval[]
+  notifications  Notification[]
+  auditLogs      AuditLog[]
+  refreshTokens  RefreshToken[]
+
+  @@map("users")
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  userId    String
+  tokenHash String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("refresh_tokens")
+}
+
+model FundingSource {
+  id          String   @id @default(uuid())
+  name        String
+  code        String?  @unique
+  contactInfo String?
+  createdAt   DateTime @default(now())
+
+  projectFundings ProjectFunding[]
+  incomes         Income[]
+
+  @@map("funding_sources")
+}
+
+model Project {
+  id          String        @id @default(uuid())
+  code        String        @unique // e.g. MASLD-2569
+  nameTh      String
+  nameEn      String?
+  principalInvestigator String
+  department  String?
+  fiscalYear  Int
+  startDate   DateTime
+  endDate     DateTime
+  totalBudget Decimal       @db.Decimal(14, 2)
+  status      ProjectStatus @default(ACTIVE)
+  notes       String?
+  createdById String
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  createdBy       User              @relation("ProjectCreatedBy", fields: [createdById], references: [id])
+  members         ProjectMember[]
+  fundings        ProjectFunding[]
+  workPackages    WorkPackage[]
+  budgetCategories BudgetCategory[]
+  expenses        Expense[]
+  incomes         Income[]
+  notifications   Notification[]
+
+  @@index([fiscalYear])
+  @@map("projects")
+}
+
+model ProjectMember {
+  id        String      @id @default(uuid())
+  projectId String
+  userId    String
+  role      ProjectRole @default(VIEWER)
+  invitedAt DateTime    @default(now())
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([projectId, userId])
+  @@map("project_members")
+}
+
+model ProjectFunding {
+  id              String   @id @default(uuid())
+  projectId       String
+  fundingSourceId String
+  amount          Decimal  @db.Decimal(14, 2)
+  notes           String?
+  createdAt       DateTime @default(now())
+
+  project       Project       @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  fundingSource FundingSource @relation(fields: [fundingSourceId], references: [id])
+
+  @@map("project_fundings")
+}
+
+model WorkPackage {
+  id               String   @id @default(uuid())
+  projectId        String
+  name             String   // e.g. "ส่วนที่ 1: ค่าจ้างสื่อ Raising Awareness"
+  description      String?
+  budgetAllocated  Decimal  @db.Decimal(14, 2) @default(0)
+  createdAt        DateTime @default(now())
+
+  project  Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  expenses Expense[]
+
+  @@map("work_packages")
+}
+
+model BudgetCategory {
+  id              String   @id @default(uuid())
+  projectId       String
+  name            String   // ค่าตอบแทน, ค่าใช้สอย, ค่าวัสดุ, ...
+  code            String?
+  allocatedAmount Decimal  @db.Decimal(14, 2) @default(0)
+  sortOrder       Int      @default(0)
+  createdAt       DateTime @default(now())
+
+  project  Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  expenses Expense[]
+
+  @@unique([projectId, name])
+  @@map("budget_categories")
+}
+
+model Expense {
+  id             String        @id @default(uuid())
+  projectId      String
+  categoryId     String
+  workPackageId  String?
+  date           DateTime
+  documentNo     String?
+  description    String
+  amount         Decimal       @db.Decimal(14, 2)
+  payee          String
+  paymentMethod  PaymentMethod @default(BANK_TRANSFER)
+  status         ExpenseStatus @default(DRAFT)
+  submittedById  String
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  project      Project        @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  category     BudgetCategory @relation(fields: [categoryId], references: [id])
+  workPackage  WorkPackage?   @relation(fields: [workPackageId], references: [id])
+  submittedBy  User           @relation("ExpenseSubmittedBy", fields: [submittedById], references: [id])
+  files        ExpenseFile[]
+  approvals    Approval[]
+
+  @@index([projectId, status])
+  @@index([categoryId])
+  @@map("expenses")
+}
+
+model ExpenseFile {
+  id                String   @id @default(uuid())
+  expenseId         String
+  fileUrl           String
+  fileType          String   // PDF | JPG | PNG
+  originalName      String
+  ocrText           String?
+  ocrExtractedData  Json?    // { date, amount, documentNo, confidence }
+  uploadedAt        DateTime @default(now())
+
+  expense Expense @relation(fields: [expenseId], references: [id], onDelete: Cascade)
+
+  @@map("expense_files")
+}
+
+model Approval {
+  id         String         @id @default(uuid())
+  expenseId  String
+  approverId String
+  step       ApprovalStep
+  status     ApprovalStatus @default(PENDING)
+  comment    String?
+  actedAt    DateTime?
+  createdAt  DateTime       @default(now())
+
+  expense  Expense @relation(fields: [expenseId], references: [id], onDelete: Cascade)
+  approver User    @relation(fields: [approverId], references: [id])
+
+  @@index([expenseId])
+  @@map("approvals")
+}
+
+model Income {
+  id              String   @id @default(uuid())
+  projectId       String
+  fundingSourceId String?
+  installment     String   // งวดเงิน เช่น "งวดที่ 1"
+  receivedDate    DateTime
+  amount          Decimal  @db.Decimal(14, 2)
+  documentNo      String?
+  notes           String?
+  createdAt       DateTime @default(now())
+
+  project       Project        @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  fundingSource FundingSource? @relation(fields: [fundingSourceId], references: [id])
+
+  @@map("incomes")
+}
+
+model Notification {
+  id        String           @id @default(uuid())
+  userId    String
+  projectId String?
+  type      NotificationType
+  message   String
+  isRead    Boolean          @default(false)
+  createdAt DateTime         @default(now())
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  project Project? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([userId, isRead])
+  @@map("notifications")
+}
+
+model AuditLog {
+  id         String      @id @default(uuid())
+  userId     String?
+  action     AuditAction
+  entityType String
+  entityId   String?
+  oldValue   Json?
+  newValue   Json?
+  ipAddress  String?
+  createdAt  DateTime    @default(now())
+
+  user User? @relation(fields: [userId], references: [id])
+
+  @@index([entityType, entityId])
+  @@map("audit_logs")
+}

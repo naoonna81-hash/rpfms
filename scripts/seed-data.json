@@ -1,0 +1,175 @@
+{
+  "note": "สกัดจากไฟล์ข้อเสนอโครงการวิจัยจริง 4 โครงการ (สวรส. ปีงบประมาณ 2569) — ยอดรวมหมวดและยอดรวมโครงการตรงกับเอกสารต้นฉบับ 100%; รายการย่อยระดับเบิกจ่าย (expenses) เป็นตัวอย่างที่สร้างจากรายการงบประมาณจริงเพื่อสาธิตการทำงานของระบบ (สถานะ/วันที่ ผู้ใช้ปรับแก้ได้หลัง seed)",
+  "admin": { "name": "Penelope (Super Admin)", "email": "naoonna81@gmail.com", "password": "Rpfms#2569!", "role": "SUPER_ADMIN" },
+  "fundingSources": [
+    { "code": "HSRI", "name": "สถาบันวิจัยระบบสาธารณสุข (สวรส.)" }
+  ],
+  "users": [
+    { "name": "รศ.พญ.มณีรัตน์ ชยานุภัทร์กุล", "email": "maneeratc@gmail.com", "role": "USER", "projectRole": "OWNER", "onProject": "MASLD-2569" },
+    { "name": "ผศ.ดร.นพ.ศุภพัชญ ศรีภูษณาพรรณ", "email": "supachaya.s@chula.ac.th", "role": "USER", "projectRole": "OWNER", "onProject": "HCC-2569" },
+    { "name": "พญ.อัญชลี วิหิงสาสานนท์", "email": "anchaleea2009@gmail.com", "role": "USER", "projectRole": "OWNER", "onProject": "VH-2569" },
+    { "name": "ผศ.พญ.ณัชชา ปิ่นเจริญ", "email": "nutcha.rcrt@gmail.com", "role": "USER", "projectRole": "OWNER", "onProject": "DMDT-2569" },
+    { "name": "เจ้าหน้าที่การเงินโครงการ", "email": "finance.staff@example.org", "role": "USER", "projectRole": "EDITOR", "onProject": "ALL" }
+  ],
+  "projects": [
+    {
+      "code": "MASLD-2569",
+      "nameTh": "การขับเคลื่อนเชิงรุกเพื่อการป้องกันมะเร็งตับสำหรับประชาชนและการตรวจคัดกรองไขมันพอกตับระยะรุนแรงในคลินิกเบาหวาน",
+      "nameEn": "Proactive Initiative for Population-Based Liver Cancer Prevention and Integrating Severe MASLD Screening in Diabetes Clinics",
+      "principalInvestigator": "รศ.พญ.มณีรัตน์ ชยานุภัทร์กุล",
+      "department": "ศูนย์เชี่ยวชาญเฉพาะทางด้านโรคตับอักเสบและมะเร็งตับ คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย",
+      "fiscalYear": 2569,
+      "startDate": "2025-10-01",
+      "endDate": "2027-09-30",
+      "totalBudget": 8989750,
+      "fundingAmount": 8989750,
+      "categories": [
+        { "name": "หมวดค่าตอบแทน", "allocatedAmount": 1995000 },
+        { "name": "หมวดค่าบริหารจัดการ", "allocatedAmount": 66000 },
+        { "name": "หมวดค่าดำเนินงาน", "allocatedAmount": 6111500 },
+        { "name": "หมวดค่าครุภัณฑ์", "allocatedAmount": 0 },
+        { "name": "หมวดค่าธรรมเนียมสถาบันต้นสังกัด", "allocatedAmount": 817250 }
+      ],
+      "workPackages": [
+        { "name": "ส่วนที่ 1: ค่าจ้างสื่อเพื่อการตระหนักรู้ (Raising Awareness)", "budgetAllocated": 1500000 },
+        { "name": "ส่วนที่ 2: กิจกรรมยกระดับการตรวจคัดกรองในคลินิกเบาหวาน", "budgetAllocated": 3230000 },
+        { "name": "ส่วนที่ 3: การจัดประชุม ลงพื้นที่คัดกรอง และรณรงค์ชุมชน", "budgetAllocated": 431500 },
+        { "name": "ส่วนที่ 4: ค่าธรรมเนียมจริยธรรมงานวิจัย", "budgetAllocated": 200000 }
+      ],
+      "expenses": [
+        { "category": "หมวดค่าตอบแทน", "date": "2025-10-31", "documentNo": "MASLD-EXP-001", "description": "ค่าตอบแทนหัวหน้าโครงการ รศ.พญ.มณีรัตน์ ชยานุภัทร์กุล (75,000x0.4 FTEx1 เดือน)", "amount": 30000, "payee": "รศ.พญ.มณีรัตน์ ชยานุภัทร์กุล", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าตอบแทน", "date": "2025-11-30", "documentNo": "MASLD-EXP-002", "description": "ค่าตอบแทนผู้ช่วยนักวิจัย (ปริญญาโท) เดือน พ.ย.", "amount": 22750, "payee": "ผู้ช่วยนักวิจัย (ป.โท)", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าตอบแทน", "date": "2025-12-30", "documentNo": "MASLD-EXP-003", "description": "ค่าตอบแทนผู้ประสานงานโครงการ 3 อัตรา เดือน ธ.ค.", "amount": 54000, "payee": "ทีมผู้ประสานงานโครงการ", "paymentMethod": "BANK_TRANSFER", "status": "APPROVED" },
+        { "category": "หมวดค่าบริหารจัดการ", "date": "2025-11-05", "documentNo": "MASLD-EXP-004", "description": "ค่าเดินทางติดต่อประสานงาน เดือน พ.ย.", "amount": 5000, "payee": "หน่วยประสานงานโครงการ", "paymentMethod": "CASH", "status": "PAID" },
+        { "category": "หมวดค่าบริหารจัดการ", "date": "2025-12-05", "documentNo": "MASLD-EXP-005", "description": "ค่าโทรศัพท์ 1 เบอร์ตลอดโครงการ เดือน ธ.ค.", "amount": 500, "payee": "AIS", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2025-12-15", "documentNo": "MASLD-EXP-006", "description": "ค่าจ้างผลิตสื่อมัลติมีเดีย Micro-learning Campaign และ Infographics \"ลดหวานเพื่อตับ\"", "amount": 1300000, "payee": "บริษัทผลิตสื่อดิจิทัล", "paymentMethod": "BANK_TRANSFER", "status": "APPROVED" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-01-10", "documentNo": "MASLD-EXP-007", "description": "ค่าบริการลงสื่อการเรียนรู้ผ่านช่องทาง MEDUMORE (20 ชุด)", "amount": 200000, "payee": "MEDUMORE Platform", "paymentMethod": "BANK_TRANSFER", "status": "PENDING_LEAD" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-01-20", "documentNo": "MASLD-EXP-008", "description": "ค่าตรวจยืนยันด้วย FibroScan (งวดที่ 1, 800 ราย)", "amount": 400000, "payee": "หน่วยตรวจ FibroScan เครือข่าย รพ.", "paymentMethod": "BANK_TRANSFER", "status": "PENDING_STAFF" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-02-05", "documentNo": "MASLD-EXP-009", "description": "ค่าวัสดุสิ้นเปลืองสำหรับเก็บตัวอย่างเลือด (หลอดเลือด/ผ้าก๊อซ/สำลี)", "amount": 250000, "payee": "บริษัทเวชภัณฑ์", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-02-20", "documentNo": "MASLD-EXP-010", "description": "ค่าใช้จ่ายจัดกิจกรรมคัดกรองเคลื่อนที่เชิงรุกในชุมชน ครั้งที่ 1-3", "amount": 96000, "payee": "ทีมคัดกรองชุมชน", "paymentMethod": "CASH", "status": "PAID" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-03-15", "documentNo": "MASLD-EXP-011", "description": "ค่าเดินทางและที่พักลงพื้นที่ ครั้งที่ 1", "amount": 137500, "payee": "ทีมวิจัยลงพื้นที่", "paymentMethod": "CASH", "status": "DRAFT" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-04-01", "documentNo": "MASLD-EXP-012", "description": "ค่าธรรมเนียมการยื่นจริยธรรมการวิจัย 20 แห่ง", "amount": 200000, "payee": "คณะกรรมการจริยธรรมการวิจัย รพ. เครือข่าย", "paymentMethod": "BANK_TRANSFER", "status": "REJECTED" }
+      ],
+      "incomes": [
+        { "installment": "งวดที่ 1", "receivedDate": "2025-10-15", "amount": 4494875, "documentNo": "HSRI-INC-MASLD-01", "notes": "เงินงวดแรก 50%" }
+      ]
+    },
+    {
+      "code": "HCC-2569",
+      "nameTh": "การคัดกรองมะเร็งตับในประชากรกลุ่มเสี่ยงสูงด้วยนวัตกรรมดิจิทัลอัลกอริทึม",
+      "nameEn": "Surveillance of Hepatocellular Carcinoma in High-Risk Populations Utilizing Digital Algorithm Innovations",
+      "principalInvestigator": "ผศ.ดร.นพ.ศุภพัชญ ศรีภูษณาพรรณ",
+      "department": "คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย",
+      "fiscalYear": 2569,
+      "startDate": "2025-10-01",
+      "endDate": "2026-09-30",
+      "totalBudget": 6991600,
+      "fundingAmount": 6991600,
+      "categories": [
+        { "name": "หมวดค่าตอบแทน", "allocatedAmount": 1773000 },
+        { "name": "หมวดค่าบริหารจัดการ", "allocatedAmount": 72000 },
+        { "name": "หมวดค่าดำเนินงาน", "allocatedAmount": 4511000 },
+        { "name": "หมวดค่าครุภัณฑ์", "allocatedAmount": 0 },
+        { "name": "หมวดค่าธรรมเนียมสถาบันต้นสังกัด", "allocatedAmount": 635600 }
+      ],
+      "workPackages": [
+        { "name": "ส่วนที่ 1: การเก็บรวบรวมข้อมูลและบริหารจัดการสิ่งส่งตรวจ", "budgetAllocated": 3200000 },
+        { "name": "ส่วนที่ 2: การจัดประชุมบุคลากรในเครือข่ายและการลงพื้นที่", "budgetAllocated": 1111000 },
+        { "name": "ส่วนที่ 3: ค่าธรรมเนียมจริยธรรมงานวิจัย", "budgetAllocated": 200000 }
+      ],
+      "expenses": [
+        { "category": "หมวดค่าตอบแทน", "date": "2025-10-31", "documentNo": "HCC-EXP-001", "description": "ค่าตอบแทนหัวหน้าโครงการ ผศ.ดร.นพ.ศุภพัชญ ศรีภูษณาพรรณ เดือน ต.ค.", "amount": 30000, "payee": "ผศ.ดร.นพ.ศุภพัชญ ศรีภูษณาพรรณ", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าตอบแทน", "date": "2025-11-30", "documentNo": "HCC-EXP-002", "description": "ค่าตอบแทนผู้ช่วยนักวิจัย (ป.ตรี) 2 อัตรา เดือน พ.ย.", "amount": 39000, "payee": "ทีมผู้ช่วยนักวิจัย", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าบริหารจัดการ", "date": "2025-11-10", "documentNo": "HCC-EXP-003", "description": "ค่าเดินทางติดต่อประสานงาน เดือน พ.ย.", "amount": 5000, "payee": "หน่วยประสานงานโครงการ", "paymentMethod": "CASH", "status": "PAID" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2025-12-01", "documentNo": "HCC-EXP-004", "description": "ค่าบริการเจาะเลือด ปั่นแยก เก็บตัวอย่างตรวจ Biomarkers ชนิดใหม่ (700 ชุด งวดที่ 1)", "amount": 70000, "payee": "ห้องปฏิบัติการเครือข่าย รพ.", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-01-05", "documentNo": "HCC-EXP-005", "description": "ค่าจ้างตรวจ Biomarkers ทางห้องปฏิบัติการ HCC Surveillance (700 ชุด งวดที่ 1)", "amount": 280000, "payee": "ห้องปฏิบัติการกลาง", "paymentMethod": "BANK_TRANSFER", "status": "APPROVED" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-01-20", "documentNo": "HCC-EXP-006", "description": "ค่าบริการขนส่งสิ่งส่งตรวจแบบควบคุมอุณหภูมิ (700 ชุด งวดที่ 1)", "amount": 245000, "payee": "บริษัทขนส่งเวชภัณฑ์เย็น", "paymentMethod": "BANK_TRANSFER", "status": "PENDING_LEAD" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-02-10", "documentNo": "HCC-EXP-007", "description": "ค่าตอบแทนผู้ช่วยปฏิบัติงานประสานงานพื้นที่หน้างาน (Node Coordinators) เดือน ก.พ.", "amount": 60000, "payee": "ทีม Node Coordinators", "paymentMethod": "BANK_TRANSFER", "status": "PENDING_STAFF" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-03-01", "documentNo": "HCC-EXP-008", "description": "ค่าจัดประชุมแนะนำโครงการและฝึกอบรมการใช้งานระบบ 10 แห่ง", "amount": 100000, "payee": "ทีมจัดอบรม", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-03-15", "documentNo": "HCC-EXP-009", "description": "ค่าเดินทางและที่พักลงพื้นที่ ครั้งที่ 1-2", "amount": 275000, "payee": "ทีมวิจัยลงพื้นที่", "paymentMethod": "CASH", "status": "DRAFT" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-04-01", "documentNo": "HCC-EXP-010", "description": "ค่าธรรมเนียมขออนุมัติจริยธรรมการวิจัยในมนุษย์ (20 แห่ง)", "amount": 200000, "payee": "คณะกรรมการจริยธรรมการวิจัย", "paymentMethod": "BANK_TRANSFER", "status": "PAID" }
+      ],
+      "incomes": [
+        { "installment": "งวดที่ 1", "receivedDate": "2025-10-20", "amount": 3495800, "documentNo": "HSRI-INC-HCC-01", "notes": "เงินงวดแรก 50%" }
+      ]
+    },
+    {
+      "code": "VH-2569",
+      "nameTh": "การขับเคลื่อนเชิงรุกสำหรับการดูแลรักษาผู้ป่วยไวรัสตับอักเสบเรื้อรังด้วยนวัตกรรมดิจิทัล",
+      "nameEn": "Proactive Digital-Driven Management for Patients with Chronic Viral Hepatitis",
+      "principalInvestigator": "พญ.อัญชลี วิหิงสาสานนท์",
+      "department": "ศูนย์เชี่ยวชาญเฉพาะทางด้านโรคตับอักเสบและมะเร็งตับ คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย",
+      "fiscalYear": 2569,
+      "startDate": "2025-10-01",
+      "endDate": "2026-09-30",
+      "totalBudget": 9997570,
+      "fundingAmount": 9997570,
+      "categories": [
+        { "name": "หมวดค่าตอบแทน", "allocatedAmount": 2106600 },
+        { "name": "หมวดค่าบริหารจัดการ", "allocatedAmount": 99600 },
+        { "name": "หมวดค่าดำเนินงาน", "allocatedAmount": 6882500 },
+        { "name": "หมวดค่าครุภัณฑ์", "allocatedAmount": 0 },
+        { "name": "หมวดค่าธรรมเนียมสถาบันต้นสังกัด", "allocatedAmount": 908870 }
+      ],
+      "workPackages": [
+        { "name": "ส่วนที่ 1: ค่าจ้างทางเทคโนโลยีและระบบคลาวด์ (Hep Plus + Telemedicine)", "budgetAllocated": 5000000 },
+        { "name": "ส่วนที่ 2: การจัดประชุมบุคลากรในเครือข่ายและการลงพื้นที่", "budgetAllocated": 1682500 },
+        { "name": "ส่วนที่ 3: ค่าธรรมเนียมจริยธรรมงานวิจัย", "budgetAllocated": 200000 }
+      ],
+      "expenses": [
+        { "category": "หมวดค่าตอบแทน", "date": "2025-10-31", "documentNo": "VH-EXP-001", "description": "ค่าตอบแทนหัวหน้าโครงการ พญ.อัญชลี วิหิงสาสานนท์ เดือน ต.ค.", "amount": 30000, "payee": "พญ.อัญชลี วิหิงสาสานนท์", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าตอบแทน", "date": "2025-11-30", "documentNo": "VH-EXP-002", "description": "ค่าตอบแทนผู้ร่วมวิจัย 2 ท่าน เดือน พ.ย.", "amount": 40000, "payee": "ทีมผู้ร่วมวิจัย", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าบริหารจัดการ", "date": "2025-11-05", "documentNo": "VH-EXP-003", "description": "ค่าถ่ายเอกสารโครงการ + ค่าวัสดุสำนักงาน เดือน พ.ย.", "amount": 4300, "payee": "ร้านถ่ายเอกสาร/ซัพพลาย", "paymentMethod": "CASH", "status": "PAID" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2025-12-20", "documentNo": "VH-EXP-004", "description": "ค่าจ้างออกแบบและติดตั้งระบบ Hep Plus และ Telemedicine (งวดที่ 1)", "amount": 1500000, "payee": "บริษัทพัฒนาซอฟต์แวร์การแพทย์", "paymentMethod": "BANK_TRANSFER", "status": "APPROVED" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-01-15", "documentNo": "VH-EXP-005", "description": "ค่าบริการเชื่อมต่อข้อมูลอัตโนมัติ HIS-Hep Plus ผ่าน API (10 รพ. งวดแรก)", "amount": 1000000, "payee": "บริษัทพัฒนาซอฟต์แวร์การแพทย์", "paymentMethod": "BANK_TRANSFER", "status": "PENDING_LEAD" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-02-10", "documentNo": "VH-EXP-006", "description": "ค่าจัดประชุมฝึกอบรมการใช้งานระบบ (User Training) 10 แห่ง", "amount": 100000, "payee": "ทีมฝึกอบรม", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-02-25", "documentNo": "VH-EXP-007", "description": "ค่าจ้างเก็บข้อมูลและประสานงานติดตามคนไข้ กรอกข้อมูลลงระบบ (งวดที่ 1)", "amount": 320000, "payee": "ทีมเก็บข้อมูลภาคสนาม", "paymentMethod": "BANK_TRANSFER", "status": "PENDING_STAFF" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-03-10", "documentNo": "VH-EXP-008", "description": "ค่าเดินทางและที่พักลงพื้นที่ ครั้งที่ 1", "amount": 137500, "payee": "ทีมวิจัยลงพื้นที่", "paymentMethod": "CASH", "status": "DRAFT" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-04-05", "documentNo": "VH-EXP-009", "description": "ค่าธรรมเนียมการยื่นจริยธรรมการวิจัย 20 แห่ง", "amount": 200000, "payee": "คณะกรรมการจริยธรรมการวิจัย", "paymentMethod": "BANK_TRANSFER", "status": "PAID" }
+      ],
+      "incomes": [
+        { "installment": "งวดที่ 1", "receivedDate": "2025-10-25", "amount": 4998785, "documentNo": "HSRI-INC-VH-01", "notes": "เงินงวดแรก 50%" }
+      ]
+    },
+    {
+      "code": "DMDT-2569",
+      "nameTh": "การยกระดับระบบบริการรักษาโรคมะเร็งตับแบบจำเพาะบุคคลด้วยแพลตฟอร์มสหสาขาวิชาชีพดิจิทัล เพื่อการขยายผลทั่วประเทศ",
+      "nameEn": "Digital Multidisciplinary Team (dMDT) Platform for Accelerating Personalized Liver Cancer Treatment Nationwide",
+      "principalInvestigator": "ผศ.พญ.ณัชชา ปิ่นเจริญ",
+      "department": "ศูนย์เชี่ยวชาญเฉพาะทางด้านโรคตับอักเสบและมะเร็งตับ คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย",
+      "fiscalYear": 2569,
+      "startDate": "2025-10-01",
+      "endDate": "2026-09-30",
+      "totalBudget": 12498310,
+      "fundingAmount": 12498310,
+      "categories": [
+        { "name": "หมวดค่าตอบแทน", "allocatedAmount": 2088600 },
+        { "name": "หมวดค่าบริหารจัดการ", "allocatedAmount": 108000 },
+        { "name": "หมวดค่าดำเนินงาน", "allocatedAmount": 9165500 },
+        { "name": "หมวดค่าครุภัณฑ์", "allocatedAmount": 0 },
+        { "name": "หมวดค่าธรรมเนียมสถาบันต้นสังกัด", "allocatedAmount": 1136210 }
+      ],
+      "workPackages": [
+        { "name": "ส่วนที่ 1: ค่าจ้างบริการพัฒนาเทคโนโลยีและระบบคลาวด์ (dMDT + AI/LLM)", "budgetAllocated": 6030000 },
+        { "name": "ส่วนที่ 2: การจัดประชุมและลงพื้นที่", "budgetAllocated": 2935500 },
+        { "name": "ส่วนที่ 3: ค่าธรรมเนียมจริยธรรมงานวิจัย", "budgetAllocated": 200000 }
+      ],
+      "expenses": [
+        { "category": "หมวดค่าตอบแทน", "date": "2025-10-31", "documentNo": "DMDT-EXP-001", "description": "ค่าตอบแทนหัวหน้าโครงการ ผศ.พญ.ณัชชา ปิ่นเจริญ เดือน ต.ค.", "amount": 30000, "payee": "ผศ.พญ.ณัชชา ปิ่นเจริญ", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าตอบแทน", "date": "2025-11-30", "documentNo": "DMDT-EXP-002", "description": "ค่าตอบแทนผู้ช่วยนักวิจัย (ป.เอก/ป.โท) เดือน พ.ย.", "amount": 50050, "payee": "ทีมผู้ช่วยนักวิจัย", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าบริหารจัดการ", "date": "2025-11-05", "documentNo": "DMDT-EXP-003", "description": "ค่าถ่ายเอกสาร + ค่าวัสดุสำนักงาน + ค่าโทรศัพท์ เดือน พ.ย.", "amount": 6500, "payee": "ฝ่ายธุรการโครงการ", "paymentMethod": "CASH", "status": "PAID" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2025-12-15", "documentNo": "DMDT-EXP-004", "description": "ค่าจ้างพัฒนาแพลตฟอร์มดิจิทัล dMDT (งวดที่ 1)", "amount": 1000000, "payee": "บริษัทพัฒนาแพลตฟอร์มดิจิทัล", "paymentMethod": "BANK_TRANSFER", "status": "APPROVED" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-01-10", "documentNo": "DMDT-EXP-005", "description": "ค่าจ้างพัฒนา Agentic Clinical Workflow & LLM Integration (งวดที่ 1)", "amount": 1390000, "payee": "บริษัทพัฒนา AI/LLM", "paymentMethod": "BANK_TRANSFER", "status": "PENDING_LEAD" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-01-25", "documentNo": "DMDT-EXP-006", "description": "ค่าจ้างพัฒนาระบบ Web Application คัดกรองผู้ป่วยสงสัยมะเร็งตับ (งวดที่ 1)", "amount": 375000, "payee": "บริษัทพัฒนาเว็บแอปพลิเคชัน", "paymentMethod": "BANK_TRANSFER", "status": "PENDING_STAFF" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-02-10", "documentNo": "DMDT-EXP-007", "description": "ค่าจัดประชุมฝึกอบรมการใช้งานระบบ (User Training) 20 แห่ง", "amount": 200000, "payee": "ทีมฝึกอบรม", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-02-28", "documentNo": "DMDT-EXP-008", "description": "ค่าจัดประชุมคณะกรรมการมติบอร์ด (MDT Expert Panel) ครั้งที่ 1", "amount": 100000, "payee": "คณะกรรมการผู้เชี่ยวชาญ", "paymentMethod": "BANK_TRANSFER", "status": "PAID" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-03-05", "documentNo": "DMDT-EXP-009", "description": "ค่าจ้างแพทย์สหสาขาให้คำแนะนำการรักษาคนไข้ในระบบ dMDT (งวดที่ 1)", "amount": 250000, "payee": "ทีมแพทย์สหสาขา", "paymentMethod": "BANK_TRANSFER", "status": "DRAFT" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-03-20", "documentNo": "DMDT-EXP-010", "description": "ค่าจัดทำข้อมูลคนไข้มะเร็งและลงข้อมูลในระบบ RedCap (งวดที่ 1)", "amount": 360000, "payee": "ทีมจัดการข้อมูล", "paymentMethod": "BANK_TRANSFER", "status": "REJECTED" },
+        { "category": "หมวดค่าดำเนินงาน", "date": "2026-04-10", "documentNo": "DMDT-EXP-011", "description": "ค่าธรรมเนียมการยื่นจริยธรรมการวิจัย 20 แห่ง", "amount": 200000, "payee": "คณะกรรมการจริยธรรมการวิจัย", "paymentMethod": "BANK_TRANSFER", "status": "PAID" }
+      ],
+      "incomes": [
+        { "installment": "งวดที่ 1", "receivedDate": "2025-10-28", "amount": 6249155, "documentNo": "HSRI-INC-DMDT-01", "notes": "เงินงวดแรก 50%" }
+      ]
+    }
+  ]
+}
